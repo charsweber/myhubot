@@ -4,7 +4,7 @@ module.exports = function(bender) {
 	  return res.reply("Hi there!");
 	});
 
-	// bender.respond(/Who's on first?/, function(res) {
-	//   return res.send("What's on second?");
-	// });
+	bender.respond(/Who's on first?/, function(res) {
+	  return res.send("What's on second?");
+	});
 }
