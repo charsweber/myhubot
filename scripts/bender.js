@@ -29,7 +29,7 @@ module.exports = function(bender) {
 		return res.send(randResponse);
 	});
 
-	bender.respond(/do you like (*)/i, function(msg) {
+	bender.respond(/do you like (\*)/, function(msg) {
 		var thing; 
 		thing = msg.match[1];
 		if (thing === "coffee") {
