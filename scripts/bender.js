@@ -79,6 +79,8 @@ module.exports = function(bender) {
             return msg.send(vote + " upvotes - " + joke.bitly_url);
           }, 1000);
         }, 4000);
+    	})
+  	});
 
 	bender.respond(/What\'s the weather like right now\?/, function(res) {
 		return res.reply("I don't know, what do I look like to you? A mediocre meteorologist?");
@@ -90,8 +92,8 @@ module.exports = function(bender) {
 
 	bender.hear(/i solemnly swear that i am up to no good/, function(res) {
 		return res.send("https://i.pinimg.com/736x/f9/00/7f/f9007fb0cff5d0ed4ca3050cd4662431--harry-potter-art-harry-potter-movies.jpg");
-	})
-};
+	});
+}
 
 
 
