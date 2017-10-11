@@ -91,28 +91,8 @@ module.exports = function(bender) {
 	bender.hear(/i solemnly swear that i am up to no good/, function(res) {
 		return res.send("https://i.pinimg.com/736x/f9/00/7f/f9007fb0cff5d0ed4ca3050cd4662431--harry-potter-art-harry-potter-movies.jpg");
 	})
-}
+};
 
-//User input: @botname please welcome name1 and name2
-//Bot output: Welcome name1 and name2. Have a glorious day
 
-// magic 8 hubot script - hey @bender will i have a good weekend? 
-// https://en.wikipedia.org/wiki/Magic_8-Ball
-/* 
-
-Your app must:
-
-Have a message post to Slack based on user input **
-Do at least 3 different things. **
-One of the commands must utilize the list of people in the class to send a direct message or reply.
-Leverage Hubot
-Use at least 1 conditional to change the outcome of a Slackbot. **
-
-Necessary Deliverables
-A working Slackbot, built by you, that can be run in the class Slack room.
-A new git repository hosted on Github, where codebase is maintained.
-A readme.md file with explanations of what your bot does, what commands it responds to, the approach taken, installation instructions, unsolved problems, etc.
-
-*/
 
 
