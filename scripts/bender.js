@@ -67,6 +67,19 @@ module.exports = function(bender) {
 		return res.send("Blame it on " + randomBot + "! They made me do it!");
 	});
 
+	bender.respond(/(jokel|jokels|joke)/i, function(msg) {
+      return msg.http('http://jokels.com/random_joke').get()(function(err, res, body) {
+        var joke, vote;
+        joke = JSON.parse(body).joke;
+        vote = joke.up_votes - joke.down_votes;
+        msg.send("" + joke.question);
+        return setTimeout(function() {
+          msg.send("" + joke.answer);
+          return setTimeout(function() {
+            return msg.send(vote + " upvotes - " + joke.bitly_url);
+          }, 1000);
+        }, 4000);
+
 	bender.respond(/What\'s the weather like right now\?/, function(res) {
 		return res.reply("I don't know, what do I look like to you? A mediocre meteorologist?");
 	});
@@ -74,6 +87,10 @@ module.exports = function(bender) {
 	bender.hear(/have a great day/, function(res) {
 		return res.send("http://gph.is/115kdS5" + "\n" + "What she said.");
 	});
+
+	bender.hear(/i solemnly swear that i am up to no good/, function(res) {
+		return res.send("https://i.pinimg.com/736x/f9/00/7f/f9007fb0cff5d0ed4ca3050cd4662431--harry-potter-art-harry-potter-movies.jpg");
+	})
 }
 
 //User input: @botname please welcome name1 and name2
@@ -90,35 +107,6 @@ Do at least 3 different things. **
 One of the commands must utilize the list of people in the class to send a direct message or reply.
 Leverage Hubot
 Use at least 1 conditional to change the outcome of a Slackbot. **
-
-
-Bonus
-Leverage a for loop to iterate over a collection
-Introduce a random component
-Include an image in the response in addition to text
-
-have bender add something to a to-do list
-
-bender.hear(/have a great day/, function(res) {
-	return res.send("http://gph.is/115kdS5" + "\n" + "What she said.");
-});
-
-bb8
-bishop
-c3po
-data
-droid06
-hal
-johnny5
-kitt
-numbersix
-optimusprime
-r2d2
-robocop
-rosie
-walle
-
-https://github.com/github/hubot-scripts/blob/master/src/scripts/jokels.coffee
 
 Necessary Deliverables
 A working Slackbot, built by you, that can be run in the class Slack room.
